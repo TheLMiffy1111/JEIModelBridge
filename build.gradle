@@ -29,8 +29,8 @@ repositories {
 			}
 		}
 		filter {
-			includeGroup "dev.su5ed.sinytra"
-			includeGroup "dev.su5ed.sinytra.fabric-api"
+			includeGroup "org.sinytra"
+			includeGroup "org.sinytra.forgified-fabric-api"
 		}
 	}
 	exclusiveContent {
@@ -55,14 +55,14 @@ repositories {
 	}
 }
 
-def mcVersion = "1.20.1"
+def mcVersion = "1.21.1"
 def modName = "JEIModelBridge"
 def modId = "jeimodelbridge"
-def specVersion = "20.1"
+def specVersion = "21.1"
 def vendor = "thelm"
 
 group = "thelm.jeimodelbridge"
-version = "20.1.0"
+version = "21.1.0"
 
 archivesBaseName = modName
 
@@ -72,7 +72,7 @@ sourceSets {
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(21)
 		vendor = JvmVendorSpec.AZUL
 	}
 	withSourcesJar()
@@ -84,10 +84,6 @@ tasks.withType(JavaCompile).configureEach {
 
 loom {
 	silentMojangMappingsLicense()
-	forge {
-		mixinConfig "${modId}.mixins.json"
-	}
-	mixin.defaultRefmapName = "${modId}.refmap.json"
 	runs {
 		configureEach {
 			property "forge.logging.console.level", "debug"
@@ -102,17 +98,16 @@ dependencies {
 	implementation "org.apache.logging.log4j:log4j-core:2.24.3"
 
 	// Minecraft
-	minecraft "com.mojang:minecraft:1.20.1"
+	minecraft "com.mojang:minecraft:1.21.1"
 	mappings loom.layered {
 		officialMojangMappings()
-		parchment "org.parchmentmc.data:parchment-1.20.1:2023.09.03@zip"
+		parchment "org.parchmentmc.data:parchment-1.21.1:2024.11.17@zip"
 	}
-	forge "net.minecraftforge:forge:1.20.1-47.3.7"
-	implementation "io.github.llamalad7:mixinextras-forge:0.4.1"
-	modImplementation "dev.su5ed.sinytra.fabric-api:fabric-api:0.92.2+1.11.12+1.20.1"
+	neoForge "net.neoforged:neoforge:21.1.170"
+	implementation "org.sinytra.forgified-fabric-api:forgified-fabric-api:0.115.6+2.1.0+1.21.1"
 
 	// Dependencies
-	modImplementation("mezz.jei:jei-1.20.1-forge:15.20.0.108") {transitive = false}
+	implementation("mezz.jei:jei-1.21.1-neoforge:19.21.1.305") {transitive = false}
 }
 
 def replacements = [
@@ -173,7 +168,7 @@ publishMods {
 	version = displayName = project.version
 	changelog = file("changelog.md").text
 	type = STABLE
-	modLoaders.addAll("forge", "neoforge")
+	modLoaders.add("neoforge")
 	additionalFiles.from(sourcesJar.archiveFile)
 
 	curseforge {

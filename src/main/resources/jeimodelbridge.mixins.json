@@ -4,9 +4,9 @@
 	"package": "thelm.jeimodelbridge.mixin",
 	"refmap": "jeimodelbridge.refmap.json",
 	"target": "@env(DEFAULT)",
-	"compatibilityLevel": "JAVA_17",
+	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"ForgeLimitedQuadItemModelMixin"
+		"NeoForgeLimitedQuadItemModelMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

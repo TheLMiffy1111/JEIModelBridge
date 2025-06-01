@@ -4,7 +4,7 @@ import java.util.function.Supplier;
 
 import org.spongepowered.asm.mixin.Mixin;
 
-import mezz.jei.forge.platform.ForgeLimitedQuadItemModel;
+import mezz.jei.neoforge.platform.NeoForgeLimitedQuadItemModel;
 import net.fabricmc.fabric.api.renderer.v1.model.FabricBakedModel;
 import net.fabricmc.fabric.api.renderer.v1.render.RenderContext;
 import net.minecraft.client.resources.model.BakedModel;
@@ -13,12 +13,12 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.model.BakedModelWrapper;
+import net.neoforged.neoforge.client.model.BakedModelWrapper;
 
-@Mixin(ForgeLimitedQuadItemModel.class)
-public abstract class ForgeLimitedQuadItemModelMixin extends BakedModelWrapper<BakedModel> implements FabricBakedModel {
+@Mixin(NeoForgeLimitedQuadItemModel.class)
+public abstract class NeoForgeLimitedQuadItemModelMixin extends BakedModelWrapper<BakedModel> implements FabricBakedModel {
 
-	private ForgeLimitedQuadItemModelMixin(BakedModel originalModel) {
+	private NeoForgeLimitedQuadItemModelMixin(BakedModel originalModel) {
 		super(originalModel);
 	}
 
