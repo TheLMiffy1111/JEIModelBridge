@@ -1,0 +1,28 @@
+modLoader = "lowcodefml"
+loaderVersion = "[46,)"
+license = "MIT"
+issueTrackerURL = "https://github.com/TheLMiffy1111/JEIModelBridge/issues"
+
+[[mods]]
+	modId = "jeimodelbridge"
+	version = "0@VERSION@"
+	displayName = "JEIModelBridge"
+	description = "Patches JEI's item model wrapper to also implement Fabric model extensions."
+	logoFile = "jeimodelbridge.logo.png"
+	authors = "TheLMiffy1111"
+	displayURL = "https://www.curseforge.com/minecraft/mc-mods/jeimodelbridge"
+
+[[dependencies.jeimodelbridge]]
+	modId = "minecraft"
+	versionRange = "[1.20,1.20.2)"
+	mandatory = true
+
+[[dependencies.jeimodelbridge]]
+	modId = "jei"
+	versionRange = "[15.20.0.108,)"
+	mandatory = true
+
+[[dependencies.jeimodelbridge]]
+	modId = "fabric_renderer_api_v1"
+	versionRange = "[3,)"
+	mandatory = true

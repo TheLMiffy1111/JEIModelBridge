@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "thelm.jeimodelbridge.mixin",
+	"refmap": "jeimodelbridge.refmap.json",
+	"target": "@env(DEFAULT)",
+	"compatibilityLevel": "JAVA_17",
+	"client": [
+		"ForgeLimitedQuadItemModelMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
