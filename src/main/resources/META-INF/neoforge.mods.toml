@@ -27,5 +27,5 @@ issueTrackerURL = "https://github.com/TheLMiffy1111/JEIModelBridge/issues"
 
 [[dependencies.jeimodelbridge]]
 	modId = "fabric_renderer_api_v1"
-	versionRange = "[3,)"
+	versionRange = "*"
 	type = "required"
