@@ -107,7 +107,7 @@ dependencies {
 	implementation "org.sinytra.forgified-fabric-api:forgified-fabric-api:0.115.6+2.1.1+1.21.1"
 
 	// Dependencies
-	implementation("mezz.jei:jei-1.21.1-neoforge:19.22.0.315") {transitive = false}
+	implementation("mezz.jei:jei-1.21.1-neoforge:19.22.1.316") {transitive = false}
 }
 
 def replacements = [
