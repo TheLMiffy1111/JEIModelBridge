@@ -4,7 +4,7 @@ plugins {
 	id "idea"
 	id "maven-publish"
 	id "com.crystaelix.blossom" version "1.3.2"
-	id "me.modmuss50.mod-publish-plugin" version "0.8.4"
+	id "me.modmuss50.mod-publish-plugin" version "1.0.0"
 }
 
 repositories {
@@ -104,11 +104,11 @@ dependencies {
 		officialMojangMappings()
 		parchment "org.parchmentmc.data:parchment-1.21.1:2024.11.17@zip"
 	}
-	neoForge "net.neoforged:neoforge:21.1.194"
-	implementation "org.sinytra.forgified-fabric-api:forgified-fabric-api:0.115.6+2.1.1+1.21.1"
+	neoForge "net.neoforged:neoforge:21.1.211"
+	implementation "org.sinytra.forgified-fabric-api:forgified-fabric-api:0.115.6+2.1.4+1.21.1"
 
 	// Dependencies
-	implementation("mezz.jei:jei-1.21.1-neoforge:19.22.1.316") {transitive = false}
+	implementation("mezz.jei:jei-1.21.1-neoforge:19.25.0.322") {transitive = false}
 }
 
 def replacements = [
